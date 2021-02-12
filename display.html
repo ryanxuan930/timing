@@ -179,12 +179,9 @@ setInterval(function fetch(){
             var fetch = JSON.parse(data);
             console.log(fetch);
             if(fetch[1]==1){
-                var current = new Date(Number(Date.now() + currentShift));
-                var time = new Date(Number(fetch[0]));
-                var min = current.getMinutes() - time.getMinutes();
-                var sec = current.getSeconds() - time.getSeconds();
-                var msc = Math.floor((current.getMilliseconds()-time.getMilliseconds())/100);
-                stopwatch.ini(min, sec, msc);
+                var diff = Number(Date.now() + currentShift) - Number(fetch[0]);
+                var time = new Date(diff);
+                stopwatch.ini(time.getMinutes(), time.getSeconds(), Math.floor(time.getMilliseconds()/100));
                 stopwatch.start();
             }else if(fetch[1]==2){
                 stopwatch.clean();
