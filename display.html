@@ -61,6 +61,8 @@
         <h1>RIKUJO TIMING SYSTEM</h1>
     </div>
 <script>
+var starting=0;    
+    
 class Stopwatch {
     constructor(display, results) {
         this.running = false;
@@ -169,6 +171,34 @@ let stopwatch = new Stopwatch(
     document.querySelector('.stopwatch'),
     document.querySelector('.results')
 );
+
+var i=0;
+    
+function fetch(){
+    if(!starting){
+        $.post("server/fetch.php",function(data){
+            var fetch = JSON.parse(data);
+            if(fetch[1]==1){
+                time = new Date(fetch[0]);
+                stopwatch.ini(time.getMinutes, time.getSeconds, time.getMilliseconds);
+                stopwatch.start();
+                starting=1;
+            }
+        });
+    }else{
+        if(i==3){
+            $.post("server/fetch.php",function(data){
+                var fetch = JSON.parse(data);
+                if(fetch[1]==0){
+                    stopwatch.stop();
+                    starting=0;
+                }
+            });
+        }
+        i++;
+    }
+}
+
 </script>
 </body>
 </html>
