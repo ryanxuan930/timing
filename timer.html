@@ -231,9 +231,7 @@ document.addEventListener('keypress', function(event) {
 		stopwatch.stop();
 	}
 	if (event.code == 'KeyR') {
-		stopwatch.stop();
-		stopwatch.reset();
-		stopwatch.print();
+		stopwatch.clean();
 	}
 	if (event.code == 'KeyC') {
 		stopwatch.clear();
