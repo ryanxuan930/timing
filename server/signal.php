@@ -1,3 +1,3 @@
 <?php
-echo $_POST["timestamp"];
+echo $_POST["timestamp"]."-".$_POST["status"];
 ?>
