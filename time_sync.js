@@ -32,18 +32,18 @@ setInterval(function(){
         var arrSort = timeSerial.sort();
         var median = (arrSort[4] + arrSort[3]) / 2
         latencyArray.push(median);
-        if(latencyArray.length==5){
+        if(latencyArray.length==3){
             sum = latencyArray.reduce((sum, val) => (sum += val));
-            currentLatency = sum/5;
+            currentLatency = sum/3;
             $("#latency").html(currentLatency+" ms");
             latencyArray=[];
         }
         arrSort = shiftSerial.sort();
         median = (arrSort[4] + arrSort[3]) / 2
         shiftArray.push(median);
-        if(shiftArray.length==5){
+        if(shiftArray.length==3){
             sum = shiftArray.reduce((sum, val) => (sum += val));
-            currentShift = sum/5;
+            currentShift = sum/3;
             $("#shift").html(currentShift+" ms");
             latencyArray=[];
         }
