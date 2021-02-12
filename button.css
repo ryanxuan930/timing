@@ -1,0 +1,100 @@
+.arrow_button {
+    border-radius: 4px;
+    background-color: var(--sub);
+    border: none;
+    color: white !important;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.arrow_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.arrow_button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.arrow_button:hover span {
+    padding-right: 25px;
+}
+
+.arrow_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.account_button {
+	color: white;
+	background-color:var(--main); 
+	border: 0;
+    padding: 0;
+    margin: 0;
+}
+.account_button div{
+    height: 50px;
+	line-height: 50px;
+	padding: 0px 10px;
+	text-align: center;
+	font-size: 20px;
+	cursor:pointer;
+	
+}
+.account_button:hover{
+	background-color: var(--sub);
+	transition: 0.3s;
+}
+
+.login_button {
+    width: 100%;
+    background-color: var(--main);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login_button:hover {
+    background-color: var(--light);
+}
+
+.general_button{
+    background-color: var(--main);
+    padding: 2px 3px;
+	text-align: center;
+	border: 3px var(--main) solid;
+	border-radius: 3px;
+	cursor: pointer;
+	color: white;
+    margin: 0px 5px;
+}
+.fullwidth_button{
+    background-color: var(--main);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.fullwidth_button:hover{
+    background-color: var(--sub);
+}
+@media screen and (max-width: 700px) {
+    .arrow_button{
+	    padding: 20px;
+	    width: 95%;
+	}
+}
