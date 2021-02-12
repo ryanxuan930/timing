@@ -180,7 +180,7 @@ setInterval(function fetch(){
             console.log(fetch);
             if(fetch[1]==1){
                 time = new Date(Number(fetch[0]));
-                stopwatch.ini(time.getMinutes, time.getSeconds, time.getMilliseconds);
+                stopwatch.ini(time.getMinutes(), time.getSeconds(), time.getMilliseconds());
                 stopwatch.start();
                 starting=1;
             }
