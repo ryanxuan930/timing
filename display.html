@@ -175,7 +175,7 @@ var i=0, starting=0;
     
 setInterval(function fetch(){
     console.log(starting);
-    if(starting==0){
+    if(1==1){
         $.post("server/fetch.php",function(data){
             var fetch = JSON.parse(data);
             console.log(fetch);
@@ -188,20 +188,11 @@ setInterval(function fetch(){
                 stopwatch.ini(min, sec, msc);
                 stopwatch.start();
                 starting=1;
+            }else{
+                stopwatch.stop();
+                starting=0;
             }
         });
-    }else{
-        if(i==3){
-            $.post("server/fetch.php",function(data){
-                var fetch = JSON.parse(data);
-                if(fetch[1]==0){
-                    stopwatch.stop();
-                    starting=0;
-                }
-            });
-            i=0;
-        }
-        i++;
     }
 },500);
 </script>
