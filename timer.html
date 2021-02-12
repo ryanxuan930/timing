@@ -106,7 +106,7 @@ class Stopwatch {
         let times = this.times;
         let li = document.createElement('li');
         li.innerText = this.format(times);
-        this.results.prependChild(li);
+        this.results.prepend(li);
     }
     
     stop() {
