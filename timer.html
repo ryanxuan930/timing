@@ -13,6 +13,9 @@
 <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></noscript>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
+    *{
+        box-sizing: border-box;
+    }
     @font-face {
         font-family: Digital;
         src: url("font/digital-7 (mono).ttf");
@@ -39,7 +42,6 @@
         grid-column: 2/3;
         grid-row: 2/4;
         height: 70vh;
-        overflow-y: scroll;
         
     }
     li{
@@ -70,7 +72,7 @@
             <h2>大會時間</h2>
         </div>
         <div class="grid_right">
-            <div style="margin: 5px;">
+            <div style="margin: 5px; overflow-y: scroll; background-color: #181818; height: inherit;">
                 <h2>終點時間列表</h2>
                 <hr>
                 <ol class="results" reversed ></ol>
