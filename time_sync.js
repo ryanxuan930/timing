@@ -8,7 +8,7 @@ function timeSync(){
         var currentTime = Date.now();
         var latency = (Number(currentTime) - Number(initialTime)) - (Number(sync.timeSent) - Number(sync.timeGet));
         var timeShift = ((Number(sync.timeGet)-Number(initialTime)) + (Number(sync.timeSent)-Number(currentTime)))/2;
-        $("#shift").html(timeShift);
+        $("#shift").html(timeShift+" ms");
         timeSerial.push(latency);
     });
 }
@@ -26,7 +26,7 @@ setInterval(function(){
         if(latencyArray.length==5){
             sum = latencyArray.reduce((sum, val) => (sum += val));
             currentLatency = sum/5;
-            $("#latency").html(latency);
+            $("#latency").html(latency+" ms");
             latencyArray=[];
         }
         timeSerial = [];
