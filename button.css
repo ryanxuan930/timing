@@ -1,6 +1,6 @@
 .arrow_button {
     border-radius: 4px;
-    background-color: var(--sub);
+    background-color: var(--main);
     border: none;
     color: white !important;
     text-align: center;
