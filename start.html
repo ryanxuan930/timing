@@ -41,6 +41,7 @@ setInterval(function(){
         if(latencyArray.length==5){
             sum = latencyArray.reduce((sum, val) => (sum += val));
             currentLatency = sum/5;
+            console.log(currentLatency);
         }
         timeSerial = [];
     }else{
