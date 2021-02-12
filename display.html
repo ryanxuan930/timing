@@ -173,6 +173,7 @@ let stopwatch = new Stopwatch(
 var i=0, starting=0;
     
 function fetch(){
+    console.log(starting);
     if(starting==0){
         $.post("server/fetch.php",function(data){
             var fetch = JSON.parse(data);
