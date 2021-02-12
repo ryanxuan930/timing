@@ -30,10 +30,10 @@ function timeSync(){
 }
 var i=0;
 setInterval(function(){
-    if(i==30){
+    if(i==10){
         i=0;
         var arrSort = timeSerial.sort();
-        var median = (arrSort[14] + arrSort[13]) / 2
+        var median = (arrSort[4] + arrSort[3]) / 2
         console.log(median);
         timeSerial = [];
     }else{
