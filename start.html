@@ -23,7 +23,7 @@ function timeSync(){
         var sync = JSON.parse(data);
         var currentTime = Date.now();
         var latency = Number(sync.timeGet) - Number(initialTime) + Number(currentTime)-Number(sync.timeSent);
-        $("#root").append("<div>ini"+ initialTime + "time1" + sync.timeGet + "time2" + sync.timeSent + "current" + currentTime + latency + "ms</div>");
+        $("#root").append("<div>ini "+ initialTime + " time1 " + sync.timeGet + " time2 " + sync.timeSent + " current " + currentTime +" latency "+ latency + " ms</div>");
     });
 }
 setInterval(timeSync,1000);
