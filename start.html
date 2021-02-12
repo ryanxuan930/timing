@@ -17,7 +17,9 @@
 <body>
     <div id="root"></div>
 <script>
+var currentLatency=0;
 var timeSerial = new Array();
+var latencyArray = new Array();
 function timeSync(){
     var initialTime = Date.now();
     $.post("server/time_sync.php",function(data){
@@ -35,7 +37,11 @@ setInterval(function(){
         i=0;
         var arrSort = timeSerial.sort();
         var median = (arrSort[4] + arrSort[3]) / 2
-        console.log(median);
+        latencyArray.push(median);
+        if(latencyArray.length==5){
+            sum = latencyArray.reduce((sum, val) => (sum += val));
+            currentLatency = sum/5;
+        }
         timeSerial = [];
     }else{
         timeSync();
