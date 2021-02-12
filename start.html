@@ -18,10 +18,10 @@
     <div id="root"></div>
 <script>
 function timeSync(){
-    var initialTime = new Date.now();
+    var initialTime = Date.now();
     $.post("server/time_sync.php",function(data){
         var sync = JSON.parse(data);
-        var currentTime = new Date.now();
+        var currentTime = Date.now();
         var latency = Number(sync.timeGet) - Number(currentTime) + Number(currentTime)-Number(sync.timeSent);
         $("#root").append(latency + "ms");
     });
