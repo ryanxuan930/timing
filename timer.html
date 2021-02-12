@@ -99,6 +99,8 @@ function signal(status){
     var time = new Date(timestamp);
     if(status==1){
         $("#starting_time").html("開始計時時間："+ time.toLocaleString("zh-TW"));
+    }else if(status==0){
+        $("#starting_time").html("停止計時");
     }
     $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
         
@@ -141,6 +143,7 @@ class Stopwatch {
     stop() {
         this.running = false;
         this.time = null;
+        signal(0);
     }
 
     restart() {
