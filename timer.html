@@ -52,20 +52,17 @@
         <div class="grid_center">
             <div class="stopwatch"></div>
         </div>
-        <div class="grid_right">right</div>
-        <div class="grid_bottom">bottom</div>
+        <div class="grid_right">
+            <ul class="results"></ul>
+        </div>
+        <div class="grid_bottom">
+            <button onClick="stopwatch.start();">開始</button>
+            <button onClick="stopwatch.lap();">紀錄</button>
+            <button onClick="stopwatch.stop();">停止</button>
+            <button onClick="stopwatch.restart();">歸零</button>
+            <button onClick="stopwatch.clear();">清除</button>
+        </div>
     </div>
-    
-	<nav class="controls">
-			<a href="#" class="button" onClick="stopwatch.start();">Start</a>
-			<a href="#" class="button" onClick="stopwatch.lap();">Lap</a>
-			<a href="#" class="button" onClick="stopwatch.stop();">Stop</a>
-			<a href="#" class="button" onClick="stopwatch.clear();">Clear Laps</a>
-	</nav>
-    <div id="current"></div>
-    <div id="get"></div>
-	<ul class="results"></ul>
-	<h2 id="status"></h2>
 <script>
 class Stopwatch {
     constructor(display, results) {
