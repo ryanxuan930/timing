@@ -11,8 +11,8 @@ function timeSync(){
         var latency = (Number(currentTime) - Number(initialTime)) - (Number(sync.timeSent) - Number(sync.timeGet));
         var timeShift = ((Number(sync.timeGet)-Number(initialTime)) + (Number(sync.timeSent)-Number(currentTime)))/2;
         console.log(initialTime + "/" + sync.timeGet + "/" + sync.timeSent + "/" + currentTime + "/" + latency);
-        timeSerial.push(timeShift);
-        shiftSerial.push(latency);
+        timeSerial.push(latency);
+        shiftSerial.push(timeShift);
     });
 }
 var i=0;
