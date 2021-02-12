@@ -96,7 +96,7 @@
 <script>
 function signal(status){
     var timestamp = Date.now() + currentShift;
-    $.post("signal.php",{timestamp: timestamp, status: status},function(data){
+    $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
         $("#starting_time").html("開始計時時間："+ data);
     });
 }    
