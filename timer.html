@@ -97,7 +97,7 @@
 function signal(status){
     var timestamp = Date.now() + currentShift;
     if(status==1){
-        $("#starting_time").html("開始計時時間："+ timestamp.format("yyyy-MM-dd HH:mm:ss.ff"));
+        $("#starting_time").html("開始計時時間："+ timestamp..toLocaleString("zh-TW"));
     }
     $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
         
