@@ -4,5 +4,8 @@ $timestamp = $_POST["timestamp"];
 $status = $_POST["status"];
 $conn->select_db("timing");
 $conn->query("UPDATE status SET timestamp={$timestamp}, status={$status}");
+if($conn->error){
+    echo $conn->error;
+}
 $conn->close();
 ?>
