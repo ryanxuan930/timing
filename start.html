@@ -52,11 +52,15 @@ function filterOutliers(someArray) {
   return values.filter((x) => (x >= minValue) && (x <= maxValue));
 }
 var i;
-for(i=0; i<30; i++){
-    setTimeout(timeSync(),1000);
-}
-console.log(filterOutliers(timeSerial));
-//setInterval(timeSync,1000);
+setInterval(function(){
+    if(i=30){
+        i=0;
+            console.log(filterOutliers(timeSerial));
+    }else{
+        timeSync();
+        i++;
+    }
+},1000);
 </script>
 </body>
 </html>
