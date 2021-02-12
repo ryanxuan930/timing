@@ -103,7 +103,7 @@ function signal(status){
         $("#starting_time").html("停止計時");
     }
     $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
-        
+        console.log(data);
     });
 }    
 
