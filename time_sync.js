@@ -45,7 +45,7 @@ setInterval(function(){
             sum = shiftArray.reduce((sum, val) => (sum += val));
             currentShift = sum/3;
             $("#shift").html(currentShift+" ms");
-            latencyArray=[];
+            shiftArray=[];
         }
         timeSerial = [];
         shiftSerial = [];
