@@ -187,10 +187,10 @@ setInterval(function fetch(){
                 var msc = Math.floor((current.getMilliseconds()-time.getMilliseconds())/100);
                 stopwatch.ini(min, sec, msc);
                 stopwatch.start();
-                starting=1;
+            }else if(fetch[1]==2){
+                stopwatch.clean();
             }else{
                 stopwatch.stop();
-                starting=0;
             }
         });
     }
