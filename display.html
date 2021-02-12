@@ -180,7 +180,7 @@ setInterval(function fetch(){
             var fetch = JSON.parse(data);
             console.log(fetch);
             if(fetch[1]==1){
-                var current = Number(Date.now() + currentShift);
+                var current = new Date(Number(Date.now() + currentShift));
                 var time = new Date(Number(fetch[0]));
                 var min = current.getMinutes() - time.getMinutes();
                 var sec = current.getSeconds() - time.getSeconds();
