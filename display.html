@@ -178,7 +178,7 @@ setInterval(function fetch(){
         $.post("server/fetch.php",function(data){
             var fetch = JSON.parse(data);
             if(fetch[1]==1){
-                time = new Date(fetch[0]);
+                time = new Date(Number(fetch[0]));
                 stopwatch.ini(time.getMinutes, time.getSeconds, time.getMilliseconds);
                 stopwatch.start();
                 starting=1;
