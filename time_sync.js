@@ -15,8 +15,7 @@ function timeSync(){
 var i=0;
 setInterval(function(){
     if(!currentLatency){
-        $("#latency").html("時間同步中");
-        $("#shift").html("");
+        $("#latency").html("計算中");
     }
     if(i==9){
         timeSync();
