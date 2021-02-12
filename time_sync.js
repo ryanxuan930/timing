@@ -1,4 +1,4 @@
-var currentLatency=0, timeShift=0;
+var currentLatency=0, currentShift=0;
 var timeSerial = new Array();
 var shiftSerial = new Array();
 var latencyArray = new Array();
@@ -10,13 +10,13 @@ function timeSync(){
         var currentTime = Date.now();
         var latency = (Number(currentTime) - Number(initialTime)) - (Number(sync.timeSent) - Number(sync.timeGet));
         var timeShift = ((Number(sync.timeGet)-Number(initialTime)) + (Number(sync.timeSent)-Number(currentTime)))/2;
-        timeSerial.push(latency);
+        timeSerial.push(timeShift);
         shiftSerial.push(latency);
     });
 }
 var i=0;
 setInterval(function(){
-    if(!currentLatency && !timeShift){
+    if(!currentLatency && !currentShift){
         $("#latency").html("計算中");
         $("#shift").html("計算中");
     }
@@ -38,8 +38,8 @@ setInterval(function(){
         shiftArray.push(median);
         if(shiftArray.length==5){
             sum = shiftArray.reduce((sum, val) => (sum += val));
-            timeShift = sum/5;
-            $("#shift").html(timeShift+" ms");
+            currentShift = sum/5;
+            $("#shift").html(currentShift+" ms");
             latencyArray=[];
         }
         timeSerial = [];
