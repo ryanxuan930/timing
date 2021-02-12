@@ -33,7 +33,8 @@ function timeSync(){
 }
 var i=0;
 setInterval(function(){
-    if(i==10){
+    if(i==9){
+        timeSync();
         i=0;
         var arrSort = timeSerial.sort();
         var median = (arrSort[4] + arrSort[3]) / 2
