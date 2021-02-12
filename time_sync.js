@@ -35,6 +35,7 @@ setInterval(function(){
         latencyArray.push(median);
         if(latencyArray.length==3){
             sum = latencyArray.reduce((sum, val) => (sum + val));
+            console.log(sum);
             currentLatency = sum/3;
             $("#latency").html(currentLatency+" ms");
             latencyArray=[];
