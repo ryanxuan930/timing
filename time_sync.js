@@ -17,8 +17,13 @@ function timeSync(){
 var i=0;
 setInterval(function(){
     if(!currentLatency && !currentShift){
-        $("#latency").html("計算中");
-        $("#shift").html("計算中");
+        if(i%2){
+            $("#latency").html("計算中");
+            $("#shift").html("計算中");
+        }else{
+            $("#latency").html("計算中...");
+            $("#shift").html("計算中...");
+        }
     }
     if(i==9){
         timeSync();
