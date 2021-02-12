@@ -13,6 +13,7 @@
 <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></noscript>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="button.css">
 <style>
     @font-face {
         font-family: Digital;
@@ -61,11 +62,11 @@
             <ul class="results"></ul>
         </div>
         <div class="grid_bottom">
-            <button onClick="stopwatch.start();">開始</button>
-            <button onClick="stopwatch.lap();">紀錄</button>
-            <button onClick="stopwatch.stop();">停止</button>
-            <button onClick="stopwatch.clean();">歸零</button>
-            <button onClick="stopwatch.clear();">清除</button>
+            <button class="account_button" onClick="stopwatch.start();">開始</button>
+            <button class="account_button" onClick="stopwatch.lap();">紀錄</button>
+            <button class="account_button" onClick="stopwatch.stop();">停止</button>
+            <button class="account_button" onClick="stopwatch.clean();">歸零</button>
+            <button class="account_button" onClick="stopwatch.clear();">清除</button>
         </div>
     </div>
 <script>
