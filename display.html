@@ -184,7 +184,7 @@ setInterval(function fetch(){
                 var time = new Date(Number(fetch[0]));
                 var min = current.getMinutes() - time.getMinutes();
                 var sec = current.getSeconds() - time.getSeconds();
-                var msc = current.getMilliseconds() - time.getMilliseconds();
+                var msc = Math.floor((current.getMilliseconds()-time.getMilliseconds())/100);
                 stopwatch.ini(min, sec, msc);
                 stopwatch.start();
                 starting=1;
