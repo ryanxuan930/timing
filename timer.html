@@ -81,9 +81,21 @@
             <button class="arrow_button" onClick="stopwatch.stop();"><span>停止 </span></button>
             <button class="arrow_button" onClick="stopwatch.clean();"><span>歸零 </span></button>
             <button class="arrow_button" onClick="stopwatch.clear();"><span>清除 </span></button>
+            <div>
+                <span id="shift"></span>
+                <span id="latency"></span>
+            </div>
         </div>
     </div>
+<script src="time_sync.js"></script>
 <script>
+var timestamp;
+function startSignal(){
+    $.post("start.php",{timestamp: timestamp},function(data){
+        
+    });
+}    
+
 class Stopwatch {
     constructor(display, results) {
         this.running = false;
@@ -209,39 +221,7 @@ document.addEventListener('keypress', function(event) {
 		stopwatch.print();
 	}
 });
-/*
-setInterval(function(){
-	$.post( "refresh.php", { query: 1}, function(data){
-		if(data == 2){
-			$.post( "current_time.php", { query: 1}, function(x){
-                var input = JSON.parse(x);
-                var current = new Date(parseInt(input.currentTime));
-				var iniTime = new Date(parseInt(input.iniTime));
-			stopwatch.ini(current.getMinutes()-iniTime.getMinutes(),current.getSeconds()-iniTime.getSeconds(),Math.floor((current.getMilliseconds()-iniTime.getMilliseconds())/100));
-			stopwatch.start();
-            $("#current").html("cur: " + current);
-            $("#get").html("ini: " + iniTime);
-			});
-			
-		}else if(data == 1){
-			stopwatch.stop();
-			stopwatch.reset();
-			stopwatch.print();
-		}else if(data == 3){
-			var fstart = document.getElementById("false");
-			fstart.play();
-			stopwatch.stop();
-		}else if(data == 4){
-			stopwatch.stop();
-			stopwatch.reset();
-			stopwatch.print();
-		}else if(data == 5){
-			var test = document.getElementById("test");
-			test.play();
-		}
-	})
-}, 1000);
-*/
+
 </script>
 </body>
 </html>
