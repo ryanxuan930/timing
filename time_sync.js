@@ -10,6 +10,7 @@ function timeSync(){
         var currentTime = Date.now();
         var latency = (Number(currentTime) - Number(initialTime)) - (Number(sync.timeSent) - Number(sync.timeGet));
         var timeShift = ((Number(sync.timeGet)-Number(initialTime)) + (Number(sync.timeSent)-Number(currentTime)))/2;
+        console.log(initialTime + "/" + sync.timeSent + "/" + sync.timeGet + "/" + currentTime);
         timeSerial.push(timeShift);
         shiftSerial.push(latency);
     });
