@@ -7,61 +7,61 @@
 <meta name="copyright" content="Ryan Po-Hsuan Chang All Rights Reserved">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <link rel="icon" href="https://sports.hs.ntnu.edu.tw/hsnua3/image/logo.ico" type="image/x-icon"/>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" as="style" onload="this.rel=\'stylesheet\'">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" as="style" onload="this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet"></noscript>
-<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.rel=\'stylesheet\'">
+<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></noscript>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
+    *{
+      margin: 0;
+      padding: 0;
+    }
 
-html {
-  background: #333;
-  color: #bbb;
-  font-family: Menlo;
-}
-	#title{
+    html {
+      background: #333;
+      color: #bbb;
+      font-family: Menlo;
+    }
+    #title{
 		position: fixed;
 		font-family: 'Noto Sans TC', sans-serif;
 		width: 100%;
 		font-size: 24pt;
 		text-align: center;
 	}
-.controls {
-  position: fixed;
-  text-align: center;
-  top: 3em;
-  width: 100%;
-}
+    .controls {
+      position: fixed;
+      text-align: center;
+      top: 3em;
+      width: 100%;
+    }
 
-.button {
-  color: #bbb;
-  font-size: 4vw;
-  margin: 0 0.5em;
-  text-decoration: none;
-}
+    .button {
+      color: #bbb;
+      font-size: 4vw;
+      margin: 0 0.5em;
+      text-decoration: none;
+    }
 
-.button:first-child {
-    margin-left: 0;
-}
+    .button:first-child {
+        margin-left: 0;
+    }
 
-.button:last-child {
-    margin-right: 0;
-}
+    .button:last-child {
+        margin-right: 0;
+    }
 
-.button:hover {
-  color: white;
-}
+    .button:hover {
+        color: white;
+    }
 
-.stopwatch {
-  font-size: 20vw;
-  height: 100%;
-  line-height: 100vh;
-  text-align: center;
-}
+    .stopwatch {
+        font-size: 10vw;
+        height: 100%;
+        line-height: 100vh;
+        text-align: center;
+    }
 
 .results {
   border-color: lime;
@@ -86,7 +86,6 @@ html {
 			<a href="#" class="button" onClick="stopwatch.lap();">Lap</a>
 			<a href="#" class="button" onClick="stopwatch.stop();">Stop</a>
 			<a href="#" class="button" onClick="stopwatch.clear();">Clear Laps</a>
-			<a href="#" class="button" onClick="playSound();">Test</a>
 	</nav>
     <div id="current"></div>
     <div id="get"></div>
