@@ -34,8 +34,8 @@ setInterval(function(){
         var median = (arrSort[4] + arrSort[3]) / 2
         latencyArray.push(median);
         if(latencyArray.length==3){
-            sum = latencyArray.reduce((sum, val) => (sum + val));
-            console.log(sum);
+            console.log(latencyArray);
+            sum = latencyArray.reduce((sum, val) => (sum += val));
             currentLatency = sum/3;
             $("#latency").html(currentLatency+" ms");
             latencyArray=[];
@@ -44,7 +44,7 @@ setInterval(function(){
         median = (arrSort[4] + arrSort[3]) / 2
         shiftArray.push(median);
         if(shiftArray.length==3){
-            sum = shiftArray.reduce((sum, val) => (sum + val));
+            sum = shiftArray.reduce((sum, val) => (sum += val));
             currentShift = sum/3;
             $("#shift").html(currentShift+" ms");
             shiftArray=[];
