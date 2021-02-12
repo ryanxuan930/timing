@@ -60,9 +60,7 @@
         </div>
         <h1>RIKUJO TIMING SYSTEM</h1>
     </div>
-<script>
-var starting=0;    
-    
+<script>    
 class Stopwatch {
     constructor(display, results) {
         this.running = false;
@@ -172,10 +170,10 @@ let stopwatch = new Stopwatch(
     document.querySelector('.results')
 );
 
-var i=0;
+var i=0, starting=0;
     
 function fetch(){
-    if(!starting){
+    if(starting==0){
         $.post("server/fetch.php",function(data){
             var fetch = JSON.parse(data);
             if(fetch[1]==1){
