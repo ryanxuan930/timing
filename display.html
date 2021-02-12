@@ -179,13 +179,18 @@ setInterval(function fetch(){
             var fetch = JSON.parse(data);
             console.log(fetch);
             if(fetch[1]==1){
-                var diff = Number(Date.now() + currentShift) - Number(fetch[0]);
-                var time = new Date(diff);
-                stopwatch.ini(time.getMinutes(), time.getSeconds(), Math.floor(time.getMilliseconds()/100));
-                stopwatch.start();
+                if(!starting){
+                    var diff = Number(Date.now() + currentShift) - Number(fetch[0]);
+                    var time = new Date(diff);
+                    stopwatch.ini(time.getMinutes(), time.getSeconds(), Math.floor(time.getMilliseconds()/100));
+                    stopwatch.start();
+                    starting = 1;
+                }
             }else if(fetch[1]==2){
+                starting = 0;
                 stopwatch.clean();
             }else{
+                starting = 0;
                 stopwatch.stop();
             }
         });
