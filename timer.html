@@ -178,9 +178,12 @@ class Stopwatch {
     }
     
     clear() {
-        clearChildren(this.results);
-        this.order=0;
-        cleanResult();
+        var check = confirm("確定清除紀錄？");
+        if(check){
+            clearChildren(this.results);
+            this.order=0;
+            cleanResult();
+        }
     }
     
     step(timestamp) {
