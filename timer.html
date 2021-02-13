@@ -112,7 +112,13 @@ function signal(status){
     $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
         console.log(data);
     });
-}    
+}
+    
+function result(input, rank){
+    $.post("server/result.php",{result: input, rank: rank},function(data){
+        console.log(data);
+    })
+}
 
 class Stopwatch {
     constructor(display, results) {
@@ -147,7 +153,7 @@ class Stopwatch {
         li.innerText = this.format(times);
         this.results.prepend(li);
         this.order++;
-        console.log(this.order);
+        result(this.order, this.format(times));
     }
     
     stop() {
