@@ -122,6 +122,7 @@ class Stopwatch {
         this.laps = [];
         this.reset();
         this.print(this.times);
+        this.order = 0;
     }
     
 	ini(m,s,f){
@@ -145,6 +146,8 @@ class Stopwatch {
         let li = document.createElement('li');
         li.innerText = this.format(times);
         this.results.prepend(li);
+        this.order++;
+        console.log(this.order);
     }
     
     stop() {
@@ -164,6 +167,7 @@ class Stopwatch {
     
     clear() {
         clearChildren(this.results);
+        this.order=0;
     }
     
     step(timestamp) {
