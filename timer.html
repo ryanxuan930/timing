@@ -120,6 +120,12 @@ function result(rank,input){
     })
 }
 
+function cleanResult(){
+    $.post("server/reset.php", function(data){
+        console.log(data);
+    })
+}
+
 class Stopwatch {
     constructor(display, results) {
         this.running = false;
