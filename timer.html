@@ -114,8 +114,8 @@ function signal(status){
     });
 }
     
-function result(input, rank){
-    $.post("server/result.php",{result: input, rank: rank},function(data){
+function result(rank,input){
+    $.post("server/result.php",{rank: rank, result: input},function(data){
         console.log(data);
     })
 }
