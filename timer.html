@@ -180,6 +180,7 @@ class Stopwatch {
     clear() {
         clearChildren(this.results);
         this.order=0;
+        cleanResult();
     }
     
     step(timestamp) {
