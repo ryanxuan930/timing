@@ -20,6 +20,9 @@
         --sub: #0091EA;
         --light: #00B0FF;
     }
+    .content{
+        background-color: black;
+    }
 </style>
 <title>Rikujo Timing System</title>
 </head>
@@ -28,13 +31,19 @@
         <div class="box">
             <h2>計時系統登入</h2>
             <hr>
-            <form action="" method="post">
-                <label for="account">帳號：</label>
-                <input type="email" name="account" id="account">
-                <label for="password">密碼：</label>
-                <input type="password" name="password" id="password">
-                <label for="code">代碼：</label>
-                <input type="password" name="code" id="code">
+            <form action="server/auth.php" method="post" id="form">
+                <div>
+                    <label for="account">帳號：</label>
+                    <input type="email" name="account" id="account">
+                </div>
+                <div>
+                    <label for="password">密碼：</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <label for="code">代碼：</label>
+                    <input type="password" name="code" id="code">
+                </div>
                 <button class="login_button">登入系統</button>
             </form>
         </div>
