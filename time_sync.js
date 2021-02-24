@@ -26,7 +26,7 @@ setInterval(function(){
             $("#shift").html("計算中...");
         }
     }else{
-        $("#calculate").fadeOut(1000);
+        $(".calculate").fadeOut(1000);
     }
     if(i==9){
         timeSync();
