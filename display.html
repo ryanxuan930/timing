@@ -47,10 +47,26 @@
         text-align: center;
         margin: 10px;
     }
+    .cover{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align:center;
+    }
 </style>
 <title>Rikujo Timing System</title>
 </head>
 <body>
+    <div class="cover">
+        <div style="text-align: center">系統初始化中...</div>
+    </div>
     <div class="container">
         <h1>師大附中74週年校慶迷你馬拉松</h1>
         <br>
