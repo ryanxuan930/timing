@@ -19,7 +19,7 @@ if($result->num_rows){
             echo '
             <script>
             alert("歡迎登入");
-            location.href="../timer.html";
+            location.href="../timer.php";
             </script>
             ';
         }else{
