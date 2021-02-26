@@ -27,7 +27,20 @@ if(!isset($_SESSION["account"])){
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
         <hr>
-        <div id="root"></div>
+        <ol id="root">
+        </ol>
     </div>
+<script>
+var i, tr, num=0;
+function fetch(){
+    $.post("server/get_result.php", function(data){
+        var list = JSON.parse(data);
+        num = list.ranking;
+        if($("#result").length>num){
+            $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult()"></li>');
+        }
+    });
+}
+</script>
 </body>
 </html>
