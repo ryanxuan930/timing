@@ -24,7 +24,7 @@ if(!isset($_SESSION["account"])){
 <title>Rikujo Timing System</title>
 </head>
 <body>
-    <div class="content">
+    <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
         <hr>
         <div id="root"></div>
