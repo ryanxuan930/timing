@@ -1,0 +1,31 @@
+<?php
+session_start();
+if(!isset($_SESSION["account"])){
+    echo '<script>alert("尚未登入");location.href="index.html"</script>';
+    exit();
+}
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Rikujo Timing System">
+<meta name="author" content="Ryan Po-Hsuan Chang from Rikujo Labs">
+<meta name="copyright" content="Ryan Po-Hsuan Chang All Rights Reserved">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" href="https://sports.hs.ntnu.edu.tw/hsnua3/image/logo.ico" type="image/x-icon"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></noscript>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="button.css">
+<title>Rikujo Timing System</title>
+</head>
+<body>
+    <div class="content">
+        <div id="root"></div>
+    </div>
+</body>
+</html>
