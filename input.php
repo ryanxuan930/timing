@@ -25,6 +25,8 @@ if(!isset($_SESSION["account"])){
 </head>
 <body>
     <div class="content">
+        <h2>成績紀錄系統</h2>
+        <hr>
         <div id="root"></div>
     </div>
 </body>
