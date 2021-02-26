@@ -102,6 +102,9 @@ if(!isset($_SESSION["account"])){
                 <br>
                 <span id="starting_time"></span>
             </div>
+            <div>
+                <button class="general_button" onClick="location.href='input.php'">成績紀錄頁面</button>
+            </div>
         </div>
     </div>
 <script src="time_sync.js"></script>
