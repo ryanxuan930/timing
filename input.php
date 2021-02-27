@@ -58,26 +58,9 @@ function format(el){
         el.value=el.value+".";
     }
     if(el.value.length==8){
-        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
-        console.log($next.length);
-        if(!$next.length){
-            $next = $('[tabIndex=1]');
-        }
-        $next.focus() .click();
+        $(el).next("input").focus();
     }
 }
-
-$(document).on('keypress', 'input', function (e) {
-    if (e.which == 13) {
-        e.preventDefault();
-        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
-        console.log($next.length);
-        if(!$next.length){
-            $next = $('[tabIndex=1]');
-        }
-        $next.focus() .click();
-    }
-});
 
 function fetch(){
     $.post("server/get_result.php", function(data){
