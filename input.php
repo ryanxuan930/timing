@@ -69,8 +69,9 @@ function input(el){
     }
     if(el.value.length==6){
         $(el).parent().next().children().focus();
-        $(el).next("span").html('已送出');
-        alert($(el).parent().index()+1);
+        $.post("server/insert_result.php",{ranking: (el.index()+1), bib: el.value},function(data){
+            $(el).next("span").html(data);
+        });
     }
 }
 
