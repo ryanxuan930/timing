@@ -44,11 +44,6 @@ if(!isset($_SESSION["account"])){
     </div>
 <script>
 var i, tr, num=0, id;
-function submitResult(el){
-    if(el.value!=""){
-        alert(el.value);
-    }
-}
 
 function format(el){
     if(el.value.length==2){
@@ -59,6 +54,7 @@ function format(el){
     }
     if(el.value.length==8){
         $(el).next(".result").focus();
+        alert(el.value);
     }
 }
 
@@ -68,7 +64,7 @@ function fetch(){
         num = list.ranking;
         if($("#result").length<num){
             for(i=0; i<(num-$("#result").length); i++){
-                $("#root").append('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)" onBlur="submitResult(this)"></li>');
+                $("#root").append('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
             }
         }
     });
