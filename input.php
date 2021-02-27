@@ -45,26 +45,13 @@ if(!isset($_SESSION["account"])){
 <body>
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
+        <button class="general_button" onClick="submitResult()" >送出成績</button>
         <hr>
         <ol id="root">
         </ol>
     </div>
 <script>
 var i, tr, num=0;
-/*
-function format(el){
-    if(el.value.length==2){
-        el.value=el.value+":";
-    }
-    if(el.value.length==5){
-        el.value=el.value+".";
-    }
-    if(el.value.length==8){
-        $(el).parent().next().children().focus();
-        $(el).parent().append('<span>已送出</span>');
-    }
-}
-*/
 function input(el){
     if(el.value==""){
         $(el).next("span").html('請填寫成績');
@@ -78,6 +65,12 @@ function input(el){
     }
 }
 
+function submitResult(){
+    $.post("server/submit_result.php",function(data){
+        alert(data);
+    });
+}    
+    
 function fetch(){
     $.post("server/get_result.php", function(data){
         console.log(num);
