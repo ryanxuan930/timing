@@ -92,12 +92,13 @@ function fetch(){
             
         }
         num = list.length;
+        console.log(num);
     });
 }
 fetch();
 setInterval(function(){
     fetch();
-},2000);
+},10000);
 </script>
 </body>
 </html>
