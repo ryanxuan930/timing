@@ -43,7 +43,7 @@ if(!isset($_SESSION["account"])){
     </div>
 <script>
 var i, tr;
-
+/*
 function format(el){
     if(el.value.length==2){
         el.value=el.value+":";
@@ -56,16 +56,23 @@ function format(el){
         $(el).parent().append('<span>已送出</span>');
     }
 }
+*/
+function input(el){
+    if(el.value.length==6){
+        $(el).parent().next().children().focus();
+        $(el).parent().append('<span>已送出</span>');
+    }
+}
 
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
         for(i=0; i<list.length); i++){
-            $("#root").prepend('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
+            $("#root").prepend('<li><input class="result" type="text" maxlength="6" required onKeyup="input(this)"></li>');
         }
     });
 }
-setInterval(fetch(),2000);
+setInterval(fetch(),3000);
 fetch();
 </script>
 </body>
