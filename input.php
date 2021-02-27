@@ -50,14 +50,14 @@ function submitResult(el){
     }
 }
 
-$(".result").keyup(function(){
-    if($(this).val().length==2){
-        $(this).val()=$(this).val()+":";
+function format(el){
+    if(el.value.length==2){
+        el.value=el.value+":";
     }
-    if($(this).val().length==5){
-        $(this).val()=$(this).val()+".";
+    if(el.value.length==5){
+        el.value=el.value+".";
     }
-});
+}
     
 function fetch(){
     $.post("server/get_result.php", function(data){
@@ -65,7 +65,7 @@ function fetch(){
         num = list.ranking;
         if($("#result").length<num){
             for(i=0; i<(num-$("#result").length); i++){
-                $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult(this)"></li>');
+                $("#root").append('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)" onBlur="submitResult(this)"></li>');
             }
         }
     });
