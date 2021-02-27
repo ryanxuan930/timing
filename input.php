@@ -36,7 +36,7 @@ if(!isset($_SESSION["account"])){
     }
     .result input{
         text-align: right;
-        width: 100px;
+        width: 60px;
     }
 </style>
 </head>
