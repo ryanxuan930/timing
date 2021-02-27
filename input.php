@@ -46,7 +46,8 @@ if(!isset($_SESSION["account"])){
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
         <hr>
-        <ol id="root"></ol>
+        <ol id="root">
+        </ol>
     </div>
 <script>
 var i, tr, num=0;
