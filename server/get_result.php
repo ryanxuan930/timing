@@ -2,7 +2,7 @@
 include_once("C:\wamp64\www\hsnua3\dbclass.php");
 $db = new database("timing");
 $db->table("result");
-$result = $db->select_order("rank,result,bib","rank DESC");
+$result = $db->select_order("rank,result,bib","rank ASC");
 $array = array();
 $i=0;
 while($row = $result->fetch_row()){
