@@ -27,9 +27,10 @@ if(!isset($_SESSION["account"])){
         margin: 5px;
         height: 500px;
         overflow-y: scroll;
+        font-size: 16pt;
     }
     #root li{
-        margin: 5px 0;
+        margin: 10px 0;
     }
     .result span{
         margin: 0 10px;
