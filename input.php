@@ -42,7 +42,7 @@ if(!isset($_SESSION["account"])){
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
         <hr>
-        <ol id="root" reversed></ol>
+        <ol id="root"></ol>
     </div>
 <script>
 var i, tr;
@@ -66,9 +66,9 @@ function input(el){
         $(el).focus();
     }
     if(el.value.length==6){
-        $(el).parent().prev().children().focus();
+        $(el).parent().next().children().focus();
         $(el).next("span").html('已送出');
-        alert($(el).parent().parent().index());
+        alert($(el).parent().index()+1);
     }
 }
 
