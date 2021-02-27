@@ -36,7 +36,7 @@ function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
         num = list.ranking;
-        if($("#result").length>num){
+        if($("#result").length<num){
             $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult()"></li>');
         }
     });
