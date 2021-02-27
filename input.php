@@ -98,7 +98,7 @@ function fetch(){
 fetch();
 setInterval(function(){
     fetch();
-},3000);
+},10000);
 </script>
 </body>
 </html>
