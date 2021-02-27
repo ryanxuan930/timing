@@ -57,7 +57,7 @@ function format(el){
     if(el.value.length==5){
         el.value=el.value+".";
     }
-    if(el.value.length==8 && el.nextElementSibling){
+    if(el.value.length==8){
         var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
         console.log($next.length);
         if(!$next.length){
