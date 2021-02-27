@@ -39,8 +39,7 @@ if(!isset($_SESSION["account"])){
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
         <hr>
-        <ol id="root">
-        </ol>
+        <ol id="root" reversed></ol>
     </div>
 <script>
 var i, tr, num=0, id;
@@ -64,7 +63,7 @@ function fetch(){
         num = list.ranking;
         if($("#result").length<num){
             for(i=0; i<(num-$("#result").length); i++){
-                $("#root").append('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
+                $("#root").prepend('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
             }
         }
     });
