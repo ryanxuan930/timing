@@ -76,6 +76,7 @@ function input(el){
 
 function fetch(){
     $.post("server/get_result.php", function(data){
+        console.log(data);
         var list = JSON.parse(data);
         if(list.length==0){
             $("#root").html('');
