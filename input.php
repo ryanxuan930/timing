@@ -58,7 +58,7 @@ function format(el){
         el.value=el.value+".";
     }
     if(el.value.length==8){
-        $(el).next("input").focus();
+        $(el).next(".result").focus();
     }
 }
 
