@@ -77,6 +77,7 @@ function input(el){
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
+        $("#root").html('');
         for(i=0; i<list.length; i++){
             tr = list[i];
             $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
@@ -84,7 +85,7 @@ function fetch(){
     });
 }
 fetch();
-setInterval(fetch(),3000);
+setInterval(function fetch(),3000);
 </script>
 </body>
 </html>
