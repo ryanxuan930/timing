@@ -80,7 +80,7 @@ function fetch(){
         var list = JSON.parse(data);
         for(i=0; i<list.length; i++){
             tr = list[i];
-            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
+            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onPress="input(this)"><span></span></li>');
         }
     });
 }
