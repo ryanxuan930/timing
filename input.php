@@ -54,7 +54,7 @@ function format(el){
     }
     if(el.value.length==8){
         $(el).parent().next().children().focus();
-        alert(el.value);
+        //alert(el.value);
     }
 }
 
