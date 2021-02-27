@@ -61,17 +61,17 @@ function format(el){
 }
 */
 function input(el){
+    if(el.keyCode == '38'){
+        $(el).parent().prev().children().focus();
+    }else if(el.keyCode == '40') {
+        $(el).parent().next().children().focus();
+    }
     if(el.value==""){
         $(el).next("span").html('');
     }
     if(el.value.length==6){
         $(el).parent().prev().children().focus();
         $(el).next("span").html('已送出');
-    }
-    if(el.keyCode == '38'){
-        $(el).parent().prev().children().focus();
-    }else if(el.keyCode == '40') {
-        $(el).parent().next().children().focus();
     }
 }
 
