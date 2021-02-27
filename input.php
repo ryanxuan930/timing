@@ -29,7 +29,7 @@ if(!isset($_SESSION["account"])){
     #root li{
         margin: 5px 0;
     }
-    .result{
+    .result input{
         text-align: right;
         width: 100px;
     }
@@ -68,7 +68,8 @@ function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
         for(i=0; i<list.length); i++){
-            $("#root").prepend('<li><input class="result" type="text" maxlength="6" required onKeyup="input(this)"></li>');
+            tr = list[i];
+            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"></li>');
         }
     });
 }
