@@ -33,7 +33,9 @@ if(!isset($_SESSION["account"])){
 <script>
 var i, tr, num=0, id;
 function submitResult(el){
-    alert(el.value);
+    if(el.value!=""){
+        alert(el.value);
+    }
 }
 function fetch(){
     $.post("server/get_result.php", function(data){
