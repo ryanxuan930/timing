@@ -22,6 +22,18 @@ if(!isset($_SESSION["account"])){
 <link rel="stylesheet" href="layout.css">
 <link rel="stylesheet" href="button.css">
 <title>Rikujo Timing System</title>
+<style>
+    #root{
+        margin: 5px;
+    }
+    #root li{
+        margin: 5px 0;
+    }
+    .result{
+        text-align: right;
+        width: 100px;
+    }
+</style>
 </head>
 <body>
     <div class="content" style="padding: 50px 0 0 0">
