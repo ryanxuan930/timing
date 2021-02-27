@@ -32,9 +32,8 @@ if(!isset($_SESSION["account"])){
     </div>
 <script>
 var i, tr, num=0, id;
-function submitResult(){
-    id = $(this).val();
-    alert(id);
+function submitResult(el){
+    alert(el.value);
 }
 function fetch(){
     $.post("server/get_result.php", function(data){
@@ -42,7 +41,7 @@ function fetch(){
         num = list.ranking;
         if($("#result").length<num){
             for(i=0; i<(num-$("#result").length); i++){
-                $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult()"></li>');
+                $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult(this)"></li>');
             }
         }
     });
