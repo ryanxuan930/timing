@@ -168,6 +168,7 @@ class Stopwatch {
         let li = document.createElement('li');
         li.innerText = this.format(times);
         this.results.prepend(li);
+        $(".results").scrollTop();
         this.order++;
         result(this.order, this.format(times));
     }
