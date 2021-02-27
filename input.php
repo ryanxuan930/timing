@@ -68,7 +68,7 @@ function input(el){
     if(el.value.length==6){
         $(el).parent().prev().children().focus();
         $(el).next("span").html('已送出');
-        alert($(el).parent("ol").index());
+        alert($(el).parent().parent().index());
     }
 }
 
