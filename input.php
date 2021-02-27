@@ -49,6 +49,16 @@ function submitResult(el){
         alert(el.value);
     }
 }
+
+$(".result").keyup(function(){
+    if($(this).val().length==2){
+        $(this).val()=$(this).val()+":";
+    }
+    if($(this).val().length==5){
+        $(this).val()=$(this).val()+".";
+    }
+});
+    
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
