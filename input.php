@@ -85,7 +85,9 @@ function fetch(){
     });
 }
 fetch();
-setInterval(fetch(),3000);
+setInterval(function(){
+    fetch();
+},3000);
 </script>
 </body>
 </html>
