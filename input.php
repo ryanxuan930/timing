@@ -57,7 +57,14 @@ function format(el){
     if(el.value.length==5){
         el.value=el.value+".";
     }
-    if(el.value.length==8 && el.nextElementSibling)
+    if(el.value.length==8 && el.nextElementSibling){
+        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+        console.log($next.length);
+        if(!$next.length){
+            $next = $('[tabIndex=1]');
+        }
+        $next.focus() .click();
+    }
 }
 
 $(document).on('keypress', 'input', function (e) {
@@ -65,8 +72,9 @@ $(document).on('keypress', 'input', function (e) {
         e.preventDefault();
         var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
         console.log($next.length);
-        if (!$next.length) {
-       $next = $('[tabIndex=1]');        }
+        if(!$next.length){
+            $next = $('[tabIndex=1]');
+        }
         $next.focus() .click();
     }
 });
