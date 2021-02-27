@@ -32,6 +32,9 @@ if(!isset($_SESSION["account"])){
     </div>
 <script>
 var i, tr, num=0;
+function submitResult(){
+    alert(this.value);
+}
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
