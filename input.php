@@ -68,6 +68,11 @@ function input(el){
         $(el).parent().prev().children().focus();
         $(el).next("span").html('已送出');
     }
+    if(el.keyCode == '38'){
+        $(el).parent().prev().children().focus();
+    }else if(el.keyCode == '40') {
+        $(el).parent().next().children().focus();
+    }
 }
 
 function fetch(){
