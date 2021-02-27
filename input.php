@@ -37,7 +37,9 @@ function fetch(){
         var list = JSON.parse(data);
         num = list.ranking;
         if($("#result").length<num){
-            $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult()"></li>');
+            for(i=0; i<(num-$("#result").length); i++){
+                $("#root").append('<li><input class="result" type="text" maxlength="8" required onBlur="submitResult()"></li>');
+            }
         }
     });
 }
