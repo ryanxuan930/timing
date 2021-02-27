@@ -69,7 +69,7 @@ function input(el){
     }
     if(el.value.length==6){
         $(el).parent().next().children().focus();
-        $.post("server/insert_result.php",{ranking: (el.index()+1), bib: el.value},function(data){
+        $.post("server/insert_result.php",{ranking: ($(el).index()+1), bib: el.value},function(data){
             $(el).next("span").html(data);
         });
     }
