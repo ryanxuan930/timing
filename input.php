@@ -91,14 +91,13 @@ function fetch(){
                 }
             }
         }
-        console.log(num);
         num = list.length;
     });
 }
 fetch();
 setInterval(function(){
     fetch();
-},10000);
+},3000);
 </script>
 </body>
 </html>
