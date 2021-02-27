@@ -62,8 +62,8 @@ function format(el){
 */
 function input(el){
     if(el.value.length==6){
-        $(el).parent().next().children().focus();
-        $(el).parent().append('<span>已送出</span>');
+        $(el).parent().prev().children().focus();
+        $(el).next("span").html('已送出');
     }
 }
 
@@ -72,7 +72,7 @@ function fetch(){
         var list = JSON.parse(data);
         for(i=0; i<list.length; i++){
             tr = list[i];
-            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"></li>');
+            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
         }
     });
 }
