@@ -57,8 +57,20 @@ function format(el){
     if(el.value.length==5){
         el.value=el.value+".";
     }
+    if(el.value.length==8 && el.nextElementSibling)
 }
-    
+
+$(document).on('keypress', 'input', function (e) {
+    if (e.which == 13) {
+        e.preventDefault();
+        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+        console.log($next.length);
+        if (!$next.length) {
+       $next = $('[tabIndex=1]');        }
+        $next.focus() .click();
+    }
+});
+
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
