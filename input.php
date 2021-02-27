@@ -53,7 +53,7 @@ function format(el){
         el.value=el.value+".";
     }
     if(el.value.length==8){
-        $(el).parent().next("input").focus();
+        $(el).parent().next().children().focus();
         alert(el.value);
     }
 }
