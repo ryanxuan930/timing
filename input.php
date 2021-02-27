@@ -29,6 +29,9 @@ if(!isset($_SESSION["account"])){
     #root li{
         margin: 5px 0;
     }
+    .result span{
+        margin: 0 10px;
+    }
     .result input{
         text-align: right;
         width: 100px;
