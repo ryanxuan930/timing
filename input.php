@@ -66,7 +66,6 @@ function input(el){
 
 function fetch(){
     $.post("server/get_result.php", function(data){
-        console.log(data);
         var list = JSON.parse(data);
         for(i=0; i<list.length; i++){
             tr = list[i];
