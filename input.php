@@ -33,7 +33,7 @@ if(!isset($_SESSION["account"])){
 <script>
 var i, tr, num=0, id;
 function submitResult(){
-    id = $(this).val()
+    id = $(this).val();
     alert(id);
 }
 function fetch(){
