@@ -42,7 +42,7 @@ if(!isset($_SESSION["account"])){
         <ol id="root" reversed></ol>
     </div>
 <script>
-var i, tr, num=0, id;
+var i, tr;
 
 function format(el){
     if(el.value.length==2){
@@ -60,14 +60,12 @@ function format(el){
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
-        num = list.ranking;
-        if($("#result").length<num){
-            for(i=0; i<(num-$("#result").length); i++){
-                $("#root").prepend('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
-            }
+        for(i=0; i<list.length); i++){
+            $("#root").prepend('<li><input class="result" type="text" maxlength="8" required onKeyup="format(this)"></li>');
         }
     });
 }
+setInterval(fetch(),2000);
 fetch();
 </script>
 </body>
