@@ -47,7 +47,7 @@ if(!isset($_SESSION["account"])){
         <ol id="root"></ol>
     </div>
 <script>
-var i, tr;
+var i, tr, num=0;
 /*
 function format(el){
     if(el.value.length==2){
@@ -77,11 +77,18 @@ function input(el){
 function fetch(){
     $.post("server/get_result.php", function(data){
         var list = JSON.parse(data);
-        $("#root").html('');
-        for(i=0; i<list.length; i++){
-            tr = list[i];
-            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
+        if(list.length==0){
+            $("#root").html('');
+        }else{
+            if(list.length>num){
+                for(i=(num+1); (i<list.length+1); i++){
+                    tr = list[i];
+                    $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
+                }
+            }
+            
         }
+        num = list.length;
     });
 }
 fetch();
