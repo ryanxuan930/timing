@@ -76,11 +76,12 @@ function input(el){
 
 function fetch(){
     $.post("server/get_result.php", function(data){
-        console.log(data);
+        console.log(num);
         var list = JSON.parse(data);
         if(list.length==0){
             $("#root").html('');
         }else{
+            console.log(num);
             if(list.length>num){
                 for(i=num; i<list.length; i++){
                     tr = list[i];
@@ -88,6 +89,7 @@ function fetch(){
                 }
             }
         }
+        console.log(num);
         num = list.length;
     });
 }
