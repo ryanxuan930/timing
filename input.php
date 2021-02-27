@@ -81,26 +81,20 @@ function fetch(){
         if(list.length==0){
             $("#root").html('');
         }else{
-            console.log(list.length);
-            console.log(num);
             if(list.length>num){
                 for(i=num; i<list.length; i++){
-                    console.log(i);
                     tr = list[i];
-                    console.log(tr[0]);
                     $("#root").append('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
                 }
             }
-            
         }
         num = list.length;
-        console.log(num);
     });
 }
 fetch();
 setInterval(function(){
     fetch();
-},10000);
+},3000);
 </script>
 </body>
 </html>
