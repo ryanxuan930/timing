@@ -2,8 +2,8 @@
 include_once("C:\wamp64\www\hsnua3\database.php");
 $rank = $_POST["ranking"];
 $bib = $_POST["bib"];
-$stmt = $conn->prepare("INSERT INTO timing.result (rank,bib) VALUES (?,?)");
-$stmt->bind_param("is",$rank,$result);
+$stmt = $conn->prepare("UPDATE timing.result SET bib=? WHERE rank=?");
+$stmt->bind_param("si",$result,$rank);
 $stmt->execute();
 if($conn->error){
     echo "儲存失敗：";
