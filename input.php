@@ -61,17 +61,14 @@ function format(el){
 }
 */
 function input(el){
-    if(el.keyCode == '38'){
-        $(el).parent().prev().children().focus();
-    }else if(el.keyCode == '40') {
-        $(el).parent().next().children().focus();
-    }
     if(el.value==""){
-        $(el).next("span").html('');
+        $(el).next("span").html('請填寫成績');
+        $(el).focus();
     }
     if(el.value.length==6){
         $(el).parent().prev().children().focus();
         $(el).next("span").html('已送出');
+        alert($(el).parent().index());
     }
 }
 
@@ -80,7 +77,7 @@ function fetch(){
         var list = JSON.parse(data);
         for(i=0; i<list.length; i++){
             tr = list[i];
-            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeypress="input(this)"><span></span></li>');
+            $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
         }
     });
 }
