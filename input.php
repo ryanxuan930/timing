@@ -83,7 +83,7 @@ function fetch(){
             if(list.length>num){
                 for(i=(num+1); i<=list.length; i++){
                     tr = list[i];
-                    $("#root").prepend('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
+                    $("#root").append('<li class="result"><span>'+tr[0]+'</span><input type="text" maxlength="6" value="'+tr[1]+'" required onKeyup="input(this)"><span></span></li>');
                 }
             }
             
