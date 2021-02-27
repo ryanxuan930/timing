@@ -61,6 +61,9 @@ function format(el){
 }
 */
 function input(el){
+    if(el.value==""){
+        $(el).next("span").html('');
+    }
     if(el.value.length==6){
         $(el).parent().prev().children().focus();
         $(el).next("span").html('已送出');
