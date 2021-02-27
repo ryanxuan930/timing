@@ -45,11 +45,15 @@ if(!isset($_SESSION["account"])){
         width: 80px;
         font-size: 16pt;
     }
+    .general_button{
+        margin: 10px 0;
+    }
 </style>
 </head>
 <body>
     <div class="content" style="padding: 50px 0 0 0">
         <h2>成績紀錄系統</h2>
+        <hr>
         <button class="general_button" onClick="submitResult()" >送出成績</button>
         <hr>
         <ol id="root">
