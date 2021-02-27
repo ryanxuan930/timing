@@ -25,6 +25,8 @@ if(!isset($_SESSION["account"])){
 <style>
     #root{
         margin: 5px;
+        height: 400px;
+        overflow-y: scroll;
     }
     #root li{
         margin: 5px 0;
