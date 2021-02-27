@@ -84,7 +84,7 @@ function fetch(){
             console.log(list.length);
             console.log(num);
             if(list.length>num){
-                for(i=(num+1); i<=list.length; i++){
+                for(i=num; i<list.length; i++){
                     console.log(i);
                     tr = list[i];
                     console.log(tr[0]);
