@@ -41,6 +41,7 @@ function fetch(){
         }
     });
 }
+fetch();
 </script>
 </body>
 </html>
