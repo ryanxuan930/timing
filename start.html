@@ -58,6 +58,7 @@
 <script src="time_sync.js"></script>
 <script>
 var startSound = document.getElementById("start");
+startSound.preload = "auto";
 function start(){
     startSound.play();
     var timestamp = Date.now() + currentShift;
