@@ -22,11 +22,27 @@
     html{
         background-color: #212121;
     }
+    .calculate{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align:center;
+    }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Starting Gun</title>
 </head>
 <body>
+    <div class="calculate">
+        <div style="text-align: center">系統初始化中...</div>
+    </div>
     <div id="root">
         <button class="arrow_button" onClick="start()">Start</button>
         <button class="arrow_button" onClick="falseStart()">False start</button>
