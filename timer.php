@@ -116,8 +116,6 @@ function signal(status){
         $("#starting_time").html("開始計時時間："+ time.toLocaleString("zh-TW"));
     }else if(status==0){
         $("#starting_time").html("停止計時");
-    }else{
-        
     }
     $.post("server/signal.php",{timestamp: timestamp, status: status},function(data){
         console.log(data);
@@ -290,6 +288,8 @@ setInterval(function fetch(){
                     stopwatch.start();
                     starting = 1;
                 }
+            }else if(fetch[1]==3){
+                $("#starting_time").html("起跑犯規"); 
             }else{
                 starting = 0;
                 stopwatch.stop();
