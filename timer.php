@@ -104,6 +104,7 @@ if(!isset($_SESSION["account"])){
             </div>
             <div>
                 <button class="general_button" onClick="location.href='input.php'">成績紀錄頁面</button>
+                <button class="general_button" onClick="location.href='start.php'">起跑電槍頁面</button>
             </div>
         </div>
     </div>
