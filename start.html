@@ -35,9 +35,9 @@
 <script>
 var startSound = new Audio("sound/go.mp3");
 function start(){
+    startSound.play();
     var timestamp = Date.now() + currentShift;
     var time = new Date(timestamp);
-    startSound.play();
     $.post("server/signal.php",{timestamp: timestamp, status: 1},function(data){
         console.log(data);
     });
