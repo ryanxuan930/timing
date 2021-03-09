@@ -15,7 +15,26 @@
 <title>Starting Gun</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <button onClick="start()">Start</button>
+        <button onClick="falseStart()">False start</button>
+    </div>
 <script src="time_sync.js"></script>
+<script>
+function start(){
+    var timestamp = Date.now() + currentShift;
+    var time = new Date(timestamp);
+    $.post("server/signal.php",{timestamp: timestamp, status: 1},function(data){
+        console.log(data);
+    });
+}
+function falseStart(){
+    var timestamp = Date.now() + currentShift;
+    var time = new Date(timestamp);
+    $.post("server/signal.php",{timestamp: timestamp, status: 3},function(data){
+        console.log(data);
+    });
+}
+</script>
 </body>
 </html>
