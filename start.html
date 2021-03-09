@@ -47,14 +47,14 @@
         <button class="arrow_button" onClick="start()">Start</button>
         <button class="arrow_button" onClick="falseStart()">False start</button>
     </div>
-    <audio preload="auto">
+    <audio id="start" preload="auto">
         <source src="sound/go.mp3" type="audio/mpeg">
     </audio>
 <script src="time_sync.js"></script>
 <script>
-var audio = new Audio();
+var startSound = document.getElementById("start");
 function start(){
-    audio.play();
+    startSound.play();
     var timestamp = Date.now() + currentShift;
     var time = new Date(timestamp);
     $.post("server/signal.php",{timestamp: timestamp, status: 1},function(data){
