@@ -290,9 +290,9 @@ setInterval(function fetch(){
                     starting = 1;
                 }
             }else if(fetch[1]==3){
-                $("#starting_time").html("起跑犯規");
                 starting = 0;
                 stopwatch.stop();
+                $("#starting_time").html("起跑犯規");
             }else{
                 starting = 0;
                 stopwatch.stop();
