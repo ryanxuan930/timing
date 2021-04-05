@@ -73,7 +73,7 @@ if(!isset($_SESSION["account"])){
             <h1>Rikujo Timing System (Main Terminal)</h1>
         </div>
         <div class="grid_center">
-            <h1>國立中山大學系際盃田徑錦標賽</h1>
+            <h1>師大附中74週年校慶迷你馬拉松</h1>
             <div class="stopwatch"></div>
             <h1>OFFICIAL TIME</h1>
             <h2>大會時間</h2>
