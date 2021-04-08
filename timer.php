@@ -152,10 +152,11 @@ class Stopwatch {
 		this.times = [ m, s, f ];
 	}
     reset() {
-        this.times = [ 9, 0, 0 ];
+        this.times = [ 0, 0, 0 ];
     }
     
     start() {
+        this.times = [10, 0 0];
         if (!this.time) this.time = performance.now();
         if (!this.running) {
             this.running = true;
